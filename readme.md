@@ -1,1 +1,2 @@
-This will soon have your homework assignment in it.
+# Assignment 1
+Edit the code here so a new Game is added to the table of games. 
