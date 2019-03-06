@@ -2,7 +2,7 @@
 class Game {
     //The constructor
     constructor(public name: string, public rating: number) { }
-    
+
     //A function that returns the HTML object you need
     createListNode() :HTMLElement {
         //Create the nodes we'll need
@@ -11,11 +11,11 @@ class Game {
         let rateCell = document.createElement("td");
         let nameText = document.createTextNode(this.name);
         let rateText = document.createTextNode(this.rating.toString());
-        
+
         //Add the text
         nameCell.appendChild(nameText);
         rateCell.appendChild(rateText);
-        
+
         //Add cells to row
         newRow.appendChild(nameCell);
         newRow.appendChild(rateCell);
@@ -32,5 +32,8 @@ let newGame: Game;
 function addGame() :void {
 
     //YOUR CODE GOES HERE
-
+    let name = (<HTMLInputElement>document.getElementById("name")).value;
+    let rating = parseInt((<HTMLInputElement>document.getElementById("rating")).value);
+    newGame = new Game(name, rating);
+    document.getElementById("games").appendChild(newGame.createListNode());
 }
